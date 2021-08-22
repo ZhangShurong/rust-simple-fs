@@ -1,0 +1,17 @@
+[package]
+name = "rustfs"
+version = "0.1.0"
+authors = ["Shurong Zhang <zhang_shurong@foxmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["staticlib"]
+test = false
+
+[features]
+default = ["linux-kernel-module"]
+
+[dependencies]
+linux-kernel-module = { path = "./kernel", optional = true }
+lazy_static = { version = "1.4.0", features = ["spin_no_std"] }
+
